@@ -1,0 +1,69 @@
+
+.spacing { padding-top:7px; padding-bottom:7px;}
+.middlePage {width: 680px;height: 500px;margin: 0 auto;}
+.page-header{margin: 40px 0 0;border-bottom: none;}
+.login-title.panel-title{font-family: 'reservation_wideregular';font-size: 25px;text-align: center;}
+
+.logo, .logo small {color:#333;font-family: 'brandon_grotesquemedium';text-transform: uppercase;text-align: center;}
+
+.btn-facebook, .btn-twitter, .btn-google{padding: 10px 20px;color:#fff;margin-bottom: 10px;}
+.btn-facebook {background: #3b5998;}
+.btn-twitter {background: #00aced;}
+.btn-google {background: #c32f10;}
+.btn-facebook:hover {background: #4d70bb;}
+.btn-twitter:hover {background: #20c2ff;}
+.btn-google:hover {background: #f33b14;}
+
+.login-hr{margin: 10px 20px;}
+.login-panel{/*padding: 40px 20px 20px;width: 680px;*/margin: 0 auto;/*width:35%;*/background: none;box-shadow: none;}
+.login-panel .panel-body{padding: 0;}
+
+.button {
+  color:rgb(255,255,255);
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  height: 40px;
+  line-height: 40px;
+  padding-right: 30px;
+  padding-left: 70px;
+  position: relative;
+  background-color:rgb(0,0,0);
+  border: none;
+  text-decoration: none;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  text-shadow:0px 1px 0px rgba(0,0,0,0.5);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.button:hover{
+    text-decoration: none;
+  color: #eeeaee;
+}
+
+.button p{font-size: 18px;}
+.button span {position: absolute;left: 0;width: 50px;height: 38px; text-align: center;padding-top: 3px  ;font-size:30px;border-right: 1px solid  rgba(0,0,0,0.15);text-decoration: none;}
+
+.button.twitter {background: #00acee; max-width: 180px;margin:10px auto;}
+.button.facebook {background: #3b5998; max-width: 180px;margin:10px auto;}
+.button.google{background: #db4a39; max-width: 180px;margin:10px auto;}
+.button.linkedin {background: #0e76a8; max-width: 180px;margin:10px auto;}
+
+.login-form input{ font-family: 'brandon_grotesque_regularRg'; border: none;box-shadow: none;border-bottom: solid 1px #ececec;border-radius: 0; padding-left: 0;font-size: 16px; transition-property: border-bottom; transition-duration: 0.2s; transition-delay: 0.1s; transition-timing-function: linear; margin-top:25px;}
+
+.login-form-group{position: relative; transition: all 0.2s ease-in-out 0.2s;}
+.login-form label{ font-family: 'brandon_grotesquelight';font-size: 14px;position: absolute;top:0px;color:#999; text-shadow: none; transition: all 0.2s ease-in-out 0.2s;}
+.login-form-group.active label{top: -20px;color: #000;}
+
+.login-form input[type="text"]:focus{box-shadow: none; border-color: #00acee;}
+.signIn, .signIn:hover{color:#fff;font-family: 'brandon_grotesquemedium';text-transform:uppercase;padding: 8px 25px;border-radius: 2px;background: #bdc3c7;border: none;}
+.signIn:hover{background: #e74c3c;}
+.signIn[disabled="disabled"]:hover{background:#bdc3c7;}
+.login-form-cnt{border-left: solid 1px #f5f5f5;}
+.align-center{
+	text-align: center;
+}

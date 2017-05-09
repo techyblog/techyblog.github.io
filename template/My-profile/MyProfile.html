@@ -1,0 +1,76 @@
+<div class="container">
+    <div class="myProfile-cnt">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="profile-cnt">
+                    <div class="profile-header">
+                            <img ng-src="{{profileCtrl.imgURL}}" class="img-responsive">
+                        <div ng-show="profileCtrl.showImageLoader" >
+                            <div class="loadingTxt">Please Wait</div>
+                            <div class="spinner">
+                                <div class="bounce1"></div>
+                                <div class="bounce2"></div>
+                                <div class="bounce3"></div>
+                            </div>
+                        </div>
+                        <a href="javascript:void(0)" class="changepiclink" ng-click="profileCtrl.showImageUploadPopup()" ng-if="profileCtrl.selfProfile == true">
+                            <span>Change Picture</span>
+                        </a>
+                        <div class="profile-detail">
+                            <h3>{{profileCtrl.userDets.displayName}}</h3>
+                            <p>{{profileCtrl.userDets.rank | uppercase}}</p>
+                        </div>
+                    </div>
+                    <div class="profile-middle">
+                        <div class="tabs">
+                            <ul class="list-inline" ng-click="$event.preventDefault()">
+                                <li ng-class="{ active: profileCtrl.isSet(1) }">
+									<a ng-click="profileCtrl.setTab(1)" href="#">
+										<span ng-if="profileCtrl.selfProfile == true">My Blogs</span>
+										<span ng-if="profileCtrl.selfProfile == false">User Blogs</span>
+									</a>
+								</li>
+                                <li ng-class="{ active: profileCtrl.isSet(2) }">
+									<a ng-click="profileCtrl.setTab(2)" href="javascript:void(0)">About Me</a>
+								</li>
+                                <li ng-class="{ active: profileCtrl.isSet(3) }"><a ng-click="profileCtrl.setTab(3)" href="#">Settings</a></li>
+                            </ul>
+                        </div>
+                        <div class="tabs-content profile-cnt" ng-if="profileCtrl.isSet(1)">
+                            <!--<h3>My Blogs</h3>-->
+                            
+                            <show-blog userid="{{profileCtrl.userDets.uid}}"></show-blog>
+
+                        </div>
+                        <div class="tabs-content activity-cnt" ng-if="profileCtrl.isSet(2)">
+                            
+                            <h3>{{profileCtrl.userDets.displayName}}</h3>
+                            <p class="capitalize">Rank: <strong>{{profileCtrl.userDets.rank}}</strong></p>
+                            <p>Trophies: <strong>{{profileCtrl.userDets.trophies}}</strong></p>
+                        </div>
+                        <div class="tabs-content settings-cnt" ng-if="profileCtrl.isSet(3)">
+                            <h3>Setting</h3>
+                            <p class="mutted-text">senior software engineer at clariontechnologies</p>
+                            <p class="mutted-text"><i>(Your about me is currently blank. )</i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="overlay" ng-show="profileCtrl.uploadImgPopUp">
+    <div class="container">
+        <div class="panel panel-primary upload-panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">Upload profile picture</h3>
+                <i class="fa fa-times fa-lg closepopupicon" ng-click="profileCtrl.closepopup()"></i>
+            </div>
+            <div class="panel-body">
+                <progress value="0" max="100" id="uploader" class="col-sm-12">0%</progress>
+				<input type="file" value="upload" id="fileButton" />
+            </div>
+        </div>
+    </div>
+</div>

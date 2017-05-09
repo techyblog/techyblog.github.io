@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="page-title">Pending Blogs</h1>
+        </div>
+    </div>
+    <div class="add-blog-cnt">
+        <div class="row">			
+			<div id="preloader" ng-if="reviewCtrl.preloader == true">
+				<div class="loader">
+					<svg class="circle-loader" height="50" width="50">
+						<circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="6" stroke-miterlimit="10"/>
+					</svg>
+				</div>    
+			</div>
+		</div>
+        <div class="row">
+            <div class="col-sm-12" ng-if="reviewCtrl.noBlogsAvailable == true">
+                <div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4><span class="question-hyperlink text-primary"><i class="fa fa-exclamation-triangle"></i> Currently there are no blogs to be reviewed. Thanks being a great part of the Reviewer Team, we appreciate your help.</span></h4>
+                        </div>
+					</div>
+				</div>
+			</div>
+						
+            <div class="col-sm-12" ng-repeat="blog in reviewCtrl.reviewBlogs">
+                <div class="question-header" ng-click="reviewCtrl.loadBlogDetail(blog)">
+                    <div class="row">
+                        <div class="col-sm-7">
+                            <h1 class="question-heading"><span class="question-hyperlink">{{blog.title}}</span></h1>
+                        </div>
+                        <div class="col-sm-5 text-right">
+                            <a href="javascript:void(0)" class="blog-poster">
+                                <span>{{blog.username}}</span>
+                            </a>
+                            <ul class="list-inline questionDetail">
+                                <li><span class="labelTxt">Asked on</span><span class="label-input">{{blog.blogdate | date:"dd-MM-yyyy HH:mm"}}</span></li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <hr class="blog-line">
+                </div>
+			</div>
+		</div>
+	</div>
+</div>

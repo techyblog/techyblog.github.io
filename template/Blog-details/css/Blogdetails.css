@@ -1,0 +1,58 @@
+.add-blog-cnt{font-family: 'Roboto', sans-serif;}
+.question-heading{font-size: 24px; margin-top: 0;}
+pre{border: none;border-radius: 0;}
+.questionDetail{text-transform: capitalize;margin-top: 5px;margin-bottom: 0px;}
+.labelTxt{color: #999; font-size: 13px; margin-right: 10px;}
+.label-input{font-family: 'Roboto', sans-serif; font-size: 14px;}
+.blog-like-dislike{margin: 10px 0 0; float: left;}
+.blog-like-dislike li{margin-right: 10px;}
+.blog-like-dislike li a{font-size: 12px; color:#222;}
+.blog-like-dislike li a.disabled{font-size: 12px; color:#999;}
+.blog-like-dislike li a.blog-like, .blog-like-dislike li a.blog-dislike{font-size: 12px; color:#fa8072;}
+.blog-poster{font-family: 'Roboto', sans-serif;font-size: 20px;display: block; text-align: right;}
+.blog-poster img{width: 60px; height: 60px;border-radius: 50%;}
+.blog-poster span{margin-right: 8px;}
+.btn-blue{float:right;color:#fff;background: #0280c8;font-family: 'Roboto', sans-serif; font-size: 14px;text-transform: uppercase; border-radius: 0;transition: all 0.2s ease-in-out 0.2s; margin-left: 10px;}
+.btn-blue:hover, .btn-blue:focus{color:#fff;background: #3498db;}
+hr.blog-line{margin: 0px 0 10px;}
+.add-comment-cnt{margin-top: 40px;}
+/* add-comment-form */
+form.add-comment-form label{font-size: 20px;font-weight:100;margin-bottom: 0;font-family: 'Roboto', sans-serif; position: absolute; top: 0;transition: all 0.2s ease-in-out 0.02s;color:#d7d7d7;}
+form.add-comment-form .form-control{border: none;background: none;box-shadow: none;border-radius: 0;border-bottom: solid 1px #d7d7d7;padding-left: 0;font-size: 18px; }
+form.add-comment-form textarea.form-control{min-height: 200px;resize: none;}
+
+form.add-comment-form .form-control:focus{border-bottom: solid 2px #0280c8;}
+.addBlog{font-size: 18px; float:right;font-family: 'Roboto', sans-serif;color:#fff;background: #0280c8; border: none; border-radius: 0;padding: 10px 25px;}
+.addBlog.btn[disabled]{opacity: 0.45;}
+.addBlog:focus, .addBlog:hover{background: #0280c8 !important;color: #fff !important;}
+
+.instruction{position:absolute; right: 15px;top:-15px; padding: 15px 15px 10px 15px;font-size: 14px;margin-bottom: 1.5em;background:#fcf3cf;border-radius: 0;border-color:#fae9a3;transition: display 3s ease-in-out 2s; z-index: 999;}
+.instruction h4{color:#333;font-family: 'brandon_grotesquemedium';font-size: 20px;}
+.instruction ul{padding-left:20px;list-style-type: square;}
+.instruction ul li{color:#000;line-height: 30px;font-family:'brandon_grotesquelight';font-size: 16px; text-transform: initial;}
+.instruction ul li i.fa{margin-right: 10px;}
+.add-comment-form label.active{top: -30px; color: #333;}
+
+.addBlogInst.instruction{top: 268px;right: 15px;}
+.titlePresent.instruction{left: 10px;right: inherit; }
+.titlePresent {font-family:'robot' sans-serif;font-size: 14px;top: 60px;left: 13px;position: absolute;}
+.titlePresent:after {bottom: 100%;left: 10%;border: solid transparent;content: " ";height: 0;width: 0;position: absolute;pointer-events: none;border-color: rgba(136, 183, 213, 0);border-bottom-color: #f2dede;border-width: 10px;margin-left: -10px;}
+
+
+/*comment section*/
+.comment-cnt {position: relative;border-radius: 0;overflow: hidden;background:rgba(0, 112, 255, 0.07);margin-bottom: 20px;margin-left: -15px;margin-right: -15px;/*box-shadow:0 1px 1px rgba(0,0,0,0.3);*/}
+.comment-cnt .thumbnail{position:absolute; left: 0; top: 0; width: 40px; height: 40px;border-radius: 50%;padding: 0;}
+.comment-cnt .panel {margin-bottom:0;position:relative;border: none;box-shadow: none;-webkit-box-shadow: none;border-radius: 0;background: transparent;}
+.comment-cnt .panel-heading{padding-bottom: 0;background: transparent;border-color: transparent;border-radius: 0;background: transparent;margin-bottom: 0;}
+.btn-red{color:#fff; float:right; margin-left: 10px;background: #db4a39;border-radius: 0;}
+.btn-red:hover{color:#fff; background: rgba(219, 74, 57, 0.87);}
+
+.vote-progress{
+    margin-left: 0px;
+    list-style: none;
+    padding-left: 0px;
+    width: 200px;
+}
+.vote-progress .progress{
+	height: 10px;
+}

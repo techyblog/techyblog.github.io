@@ -1,0 +1,119 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="page-title">Blog Details</h1>
+        </div>
+    </div>
+    <div class="add-blog-cnt">
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="question-header">
+                    <div class="row">
+                        <div class="col-sm-7">
+                            <h1 class="question-heading"><span class="question-hyperlink">{{blogDetsCtrl.blogdets.title}}</span></h1>
+							<div ng-if="blogDetsCtrl.showReviewerBtns == true">
+							<button class="btn btn-sm btn-success" ng-click="blogDetsCtrl.approveBlog()"><i class="fa fa-check"></i> Approve</button>
+							<button class="btn btn-sm btn-danger" ng-click="blogDetsCtrl.rejectBlog()" ng-if="blogDetsCtrl.hideRejectedBtn != true"><i class="fa fa-times"></i>  Reject</button>
+							<br/>
+							<br/>
+							</div>
+                        </div>
+                        <div class="col-sm-5 text-right">
+                            <a href="javascript:void(0)" class="blog-poster" ng-click="blogDetsCtrl.loadProfile(blogDetsCtrl.blogdets.userId)">
+                                <span>{{blogDetsCtrl.blogdets.username}}</span>
+                                <!--<img src="{{blogDetsCtrl.blogdets.userPic}}" />-->
+                            </a>
+                            <ul class="list-inline questionDetail">
+                                <li><span class="labelTxt">Asked on</span><span class="label-input">{{blogDetsCtrl.blogdets.blogdate | date:"dd-MM-yyyy HH:mm"}}</span></li>
+                            </ul>
+                            <ul class="list-inline questionDetail">
+                                <li ng-if="blogDetsCtrl.showReviewer == true"><span class="labelTxt">Reviewer</span><strong class="label-input">{{blogDetsCtrl.reviewerDets.displayName}}</strong></li>
+                            </ul>
+                            <ul class="list-inline questionDetail">
+                                <li ng-if="blogDetsCtrl.showReviewer == true">
+									<span class="label-input">
+										<a href="javascript:void(0)" ng-click="blogDetsCtrl.changeMyReviewer()">Change my reviewer <i class="fa fa-refresh" aria-hidden="true"></i></a>
+									</span>
+								</li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <hr class="blog-line">
+                </div>
+                
+                <p>
+                <div>
+                    <p ng-bind-html="blogDetsCtrl.blogdets.content"></p>                   
+                </div>
+                <div class="col-sm-12 action-conatiner">
+                    <div class="row">
+                        <hr/>
+                        <ul class="list-inline blog-like-dislike">
+                            <li>
+								<a href="javascript:void(0);" ng-click="blogDetsCtrl.voteUp()" ng-class="{'disabled': blogDetsCtrl.selfProfile == true, 'blog-like': blogDetsCtrl.votes.likes == true}">
+									<i class="fa fa-thumbs-up fa-lg"></i> 
+									<span class="text-right">{{blogDetsCtrl.blogdets.likes}}</span>
+								</a>
+							</li>
+                            <li>
+								<a href="javascript:void(0)" ng-click="blogDetsCtrl.voteDown()" ng-class="{'disabled': blogDetsCtrl.selfProfile == true, 'blog-dislike': blogDetsCtrl.votes.dislikes == true}">
+									<i class="fa fa-thumbs-down fa-lg"></i>
+									<span>{{blogDetsCtrl.blogdets.dislikes}}</span>
+								</a>
+							</li>
+                            <li><a href="javascript:void(0)" ng-class="{'disabled': blogDetsCtrl.selfProfile == true}"><i class="fa fa-eye fa-lg"></i> <span class="text-right">{{blogDetsCtrl.blogdets.views}}</span></a></li>
+                            <li><a href="javascript:void(0)" ng-class="{'disabled': blogDetsCtrl.selfProfile == true}"><i class="fa fa-mail-reply fa-lg"></i> <span class="text-right">{{blogDetsCtrl.comments.length}}</span></a></li>
+                        </ul>
+                        <button class="btn btn-blue" ng-click="blogDetsCtrl.writeAComment()">Write a comment</button>
+
+                        <div class="clearfix"></div>
+						<ul class="vote-progress" ng-show="!blogDetsCtrl.noVotesYet">
+                            <li>
+								<div class="progress">
+									<div class="progress-bar progress-bar-success" ng-style="blogDetsCtrl.positiveLikes"><span class="sr-only"></span></div>
+									<div class="progress-bar progress-bar-danger" ng-style="blogDetsCtrl.negativeLikes"><span class="sr-only"></span></div>
+								</div>
+							</li>
+						</ul>
+						
+                        <div class="clearfix"></div>
+                        <hr/>
+                    </div>
+                    <div class="row" ng-repeat="comment in blogDetsCtrl.comments">
+                        <div class="col-sm-12">
+                            <div class="comment-cnt">
+                                <!--<div class="thumbnail">
+                                    <img class="user-photo img-circle" ng-src="{{comment.userPic}}">
+                                </div>-->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <a href="javascript:void(0)"  ng-click="blogDetsCtrl.loadProfile(comment.userId)"><strong>{{comment.username}}</strong></a> <span class="text-muted">{{comment.cmntdate | date: "dd-MM-yyyy HH:mm"}}</span>
+                                    </div>
+                                    <div class="panel-body" ng-bind-html="comment.comment"> Panel content  </div><!-- /panel-body -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="add-comment-cnt" ng-if="blogDetsCtrl.showcommentSection">
+            <form class="add-comment-form" name="addComment">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="content" ng-class="{'active':active==true,'normal':active==false}">Your Comment</label>
+                            <textarea type="text" class="form-control" id="content" ng-model="blogDetsCtrl.commentdet" ng-focus="active=true" ng-blur="active=false"></textarea>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <button type="button" class="btn btn-red" ng-click="blogDetsCtrl.showcommentSection = false">Cancel</button>
+                <button type="button" class="btn btn-blue" ng-click="blogDetsCtrl.postComment();" ng-disabled="!blogDetsCtrl.commentdet">Post Your Comment</button>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="row">
+<br/>
+<div class="col-md-3 col-sm-4 col-xs-12" ng-repeat="blog in componentctrl.blogs" ng-if="(componentctrl.currentUser.uid == componentctrl.userid) || blog.approvalStatus == 'approved'">
+    <a href="#/blogdetails/{{blog.bloglink}}" class="box">
+        <div class="box-body">
+            <h3 class="ng-binding">{{blog.title}}</h3>
+            <small ng-bind-html="blog.content" class="ng-binding"></small>
+        </div>
+        <div class="box-footer blue">
+            <ul class="list-inline pull-left">
+                <li class="ng-binding"><i class="fa fa-thumbs-up"></i> {{blog.likes}}</li>
+                <li class="ng-binding"><i class="fa fa-mail-forward"></i> {{0}}</li>
+                <li class="ng-binding"><i class="fa fa-eye"></i> {{blog.views}}</li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+		<div class="profile-blog-status" ng-if="blog.approvalStatus == 'pending'">
+			Pending Approval
+		</div>
+    </a>
+</div>
+</div>

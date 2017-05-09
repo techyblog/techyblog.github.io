@@ -1,0 +1,44 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="page-title">Recent Blogs</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div id="preloader" ng-if="allblogctrl.preloader == true">
+            <div class="loader">
+                <svg class="circle-loader" height="50" width="50">
+                    <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="6" stroke-miterlimit="10"/>
+                </svg>
+            </div>    
+        </div>
+        <div class="col-sm-12" ng-if="allblogctrl.blogs.length <= 0">
+            <div class="alert alert-danger noblog-alert">
+                <h1><strong>Error!</strong> There is no blog to view. Please <a href="#/addblog" class="alert-link"><span class="text-info">add a blog</span></a>.</h1>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-4 col-xs-12" ng-repeat="blog in allblogctrl.blogs">
+            <a href="#/blogdetails/{{blog.bloglink}}" class="box">
+                <!--<div class="box-heading blue">
+                    <img ng-src="{{blog.userPic}}" class="img-circle" height="40" width="40"/>
+                    <span>{{blog.username}}</span>
+                </div>-->
+                <div class="box-body">
+                    <h3>{{blog.title}}</h3>
+                    <small ng-bind-html="blog.content"></small>
+                </div>
+                <div class="box-footer blue">
+                    <ul class="list-inline pull-left">
+                        <li><i class="fa fa-thumbs-up"></i> {{blog.likes}}</li>
+                        <li><i class="fa fa-thumbs-down"></i> {{blog.dislikes}}</li>
+                        <!-- <li><i class="fa fa-mail-forward"></i> {{0}}</li> -->
+                        <li><i class="fa fa-eye"></i> {{blog.views}}</li>
+                    </ul>
+                    <span class="pull-right blog-name">{{blog.username}}</span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
