@@ -40,7 +40,8 @@ function AllBlogController($firebaseArray, $rootScope, $location){
                         "photoURL": user.photoURL,
                         "displayName": user.displayName,
                         "trophies": 50,
-                        "imgupload": false
+                        "imgupload": false,
+			"rank": "attentive"
                     };
                     vm.users.$add(tmpUserDets);
                 }
