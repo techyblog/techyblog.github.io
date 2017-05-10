@@ -1,7 +1,7 @@
 # TechyBlog - A blog for everyone
 > This is an technical online blog
 
-`Still under construction`
+`Version 1.0`
 
 This is a generalized blog where people with different views and knowledge bases come together and create something remarkable.
 We have created this blog specially to bring out people and to write about what they know. Most of the time people want to share their knowledge, their expertise but they don't have any platform to do so. And this is the platform what they are looking for. Every user who joins the system has a full access to the knowledge which is shared here. User can even search for any specific blogs which interests him/her.
