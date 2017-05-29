@@ -1,9 +1,9 @@
 angular.module("TechBlog")
  .controller("NavController", NavController);
 
-NavController.$inject = ["$rootScope", "$location"];
+NavController.$inject = ["$rootScope", "$location", "$timeout"];
 
-function NavController($rootScope, $location){
+function NavController($rootScope, $location, $timeout){
     var vm = this;
     vm.init = init;
     $rootScope.menuValue = null; 
@@ -11,7 +11,8 @@ function NavController($rootScope, $location){
     vm.loadProfile = loadProfile;
 
     function init(){
-        setTimeout(function(){
+        $timeout(function(){
+          debugger;
           console.log($rootScope.user);
          },1500)
         if(!$rootScope.user){
