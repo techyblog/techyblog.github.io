@@ -11,7 +11,9 @@ function NavController($rootScope, $location){
     vm.loadProfile = loadProfile;
 
     function init(){
-     console.log($rootScope.user);
+        setTimeout(function(){
+          console.log($rootScope.user);
+         },1500)
         if(!$rootScope.user){
             $location.path('allblog');
         }
